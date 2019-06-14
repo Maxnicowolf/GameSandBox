@@ -6,7 +6,6 @@ import com.four_twoProductions.portal2D.entities.*;
 import com.four_twoProductions.portal2D.obstacles.*;
 
 import javax.swing.*;
-import javax.swing.text.html.parser.Entity;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -15,12 +14,12 @@ public class GameField extends JPanel {
 
     public  static final int HORIZONTAL = 750;
     public static final int VERTICAL = 500;
+    public static final double VELOCITY = 0.2;
     private Block[][] field;
     private int width;
     private int height;
     private int blockSize;
     public Player p;
-    private static JFrame frame;
 
     public GameField(int width, int height) {
         this.width = width;
@@ -74,16 +73,14 @@ public class GameField extends JPanel {
     public void addPlayer(Player p){
         this.p = p;
     }
-}
-
-/*public KeyListener keyListener = new KeyListener() {
+    public KeyListener keyListener = new KeyListener() {
         @Override
         public void keyPressed(KeyEvent e) {
             String key = Character.toString(e.getKeyChar());
-            if (key.equals("w")) p.move(0,-0.1);
-            if (key.equals("a")) p.move(-0.1,0);
-            if (key.equals("s")) p.move(0,0.1);
-            if (key.equals("d")) p.move(0.1,0);
+            if (key.equals("w")) p.move(0,-VELOCITY);
+            if (key.equals("a")) p.move(-VELOCITY,0);
+            if (key.equals("s")) p.move(0,VELOCITY);
+            if (key.equals("d")) p.move(VELOCITY,0);
             e.getComponent().repaint();
         }
 
@@ -97,4 +94,7 @@ public class GameField extends JPanel {
 
         }
     };
-*/
+}
+
+
+

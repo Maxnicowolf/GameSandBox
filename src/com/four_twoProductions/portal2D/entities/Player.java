@@ -33,7 +33,7 @@ public class Player extends Entity{
                         e.printStackTrace();
                     }
                     move(manager.getState(0).leftStickX, manager.getState(0).leftStickY * -1);
-                    setDir(manager.getState(0).rightStickX, manager.getState(0).rightStickY);
+                    setDir(manager.getState(0).rightStickX, manager.getState(0).rightStickY*-1);
                 }
             }
         };
