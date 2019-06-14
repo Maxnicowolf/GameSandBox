@@ -48,18 +48,23 @@ public class Entity {
 
     public void move(double xval, double yval){
         if (collision) {
-            boolean anyCollision = false;
+            boolean wallCollision = false;
+            boolean pitCollision = false;
             for (Block[] bl: gameField.getField()
                  ) {
                 for (Block b : bl
                         ) {
-                    if (b!=null&&detectCollision(xval,yval,b.getX(),b.getY())) anyCollision = true;
+                    if (b!=null&&detectCollision(xval,yval,b.getX(),b.getY())){
+                        if (b.getID()==1) wallCollision = true;
+                        if (b.getID()==2) pitCollision = true;
+                    }
                 }
             }
             //TODO Kollision Optimieren
-            if(!anyCollision) {
+            if(!wallCollision) {
             this.x += xval;
             this.y += yval;
+            if (pitCollision) System.out.println("Aaaahh!");
             }
         } else {
             this.x += xval;
