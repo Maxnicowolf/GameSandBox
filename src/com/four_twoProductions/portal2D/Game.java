@@ -11,22 +11,27 @@ import static com.four_twoProductions.portal2D.GameField.VERTICAL;
 
 public class Game {
     public static void main(String[] args) throws InterruptedException {
-        JFrame frame = new JFrame("Portal2D");
-        frame.setSize(HORIZONTAL, VERTICAL);
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        GameField field = new GameField(30, 20);
-        //frame.addKeyListener(field.keyListener);
-        field.addObstacle(10, 10, 1);
-        field.addObstacle(11, 10, 1);
-        field.addObstacle(12, 10, 1);
-        field.addObstacle(13, 10, 1);
-        field.addObstacle(12,12,2);
-        field.addPlayer(new Player(5, 5));
-        field.p.addBounds(field.getxBounds(), field.getyBounds());
-        frame.add(field);
-        frame.setVisible(true);
+        GameField field = new GameField(30, 20);;
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                JFrame frame = new JFrame("Portal2D");
+                frame.setSize(HORIZONTAL, VERTICAL);
+                frame.setResizable(false);
+                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                //frame.addKeyListener(field.keyListener);
+                field.addObstacle(10, 10, 1);
+                field.addObstacle(11, 10, 1);
+                field.addObstacle(12, 10, 1);
+                field.addObstacle(13, 10, 1);
+                field.addObstacle(12,12,2);
+                field.addPlayer(new Player(5, 5));
+                field.p.addBounds(field.getxBounds(), field.getyBounds());
+                frame.add(field);
+                frame.setVisible(true);
+            }
+        });
 
         while (true){
             Thread.sleep(50);

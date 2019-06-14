@@ -73,6 +73,7 @@ public class GameField extends JPanel {
     public void addPlayer(Player p){
         this.p = p;
     }
+
     public KeyListener keyListener = new KeyListener() {
         @Override
         public void keyPressed(KeyEvent e) {
