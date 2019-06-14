@@ -1,6 +1,6 @@
 package com.four_twoProductions.portal2D.entities;
 
-import com.studiohartman.jamepad.ControllerManager;
+//import com.studiohartman.jamepad.ControllerManager;
 
 import java.util.Vector;
 
@@ -11,14 +11,14 @@ public class Player extends Entity{
 
     public Player(double x, double y){
         super(x, y);
-        controller();
+        //controller();
     }
 
     public Player(double x, double y, Vector<Double> dir) {
         super(x, y, dir);
-        controller();
+        //controller();
     }
-
+    /*
     private void controller(){
         ControllerManager manager = new ControllerManager();
         manager.initSDLGamepad();
@@ -38,5 +38,5 @@ public class Player extends Entity{
             }
         };
         controller.start();
-    }
+    }*/
 }
