@@ -24,6 +24,7 @@ public class Game {
         field.addObstacle(13, 10, 1);
         field.addObstacle(12,12,2);
         field.addPlayer(new Player(5, 5));
+        field.p.addBounds(field.getxBounds(), field.getyBounds());
         frame.add(field);
         frame.setVisible(true);
 

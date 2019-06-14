@@ -94,6 +94,14 @@ public class GameField extends JPanel {
 
         }
     };
+
+    public int getxBounds(){
+        return width;
+    }
+
+    public int getyBounds(){
+        return height;
+    }
 }
 
 
