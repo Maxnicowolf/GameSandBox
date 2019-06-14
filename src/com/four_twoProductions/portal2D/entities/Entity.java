@@ -1,14 +1,21 @@
 package com.four_twoProductions.portal2D.entities;
 
+import com.four_twoProductions.portal2D.GameField;
+
 import java.util.Vector;
 
 //Parentclass aller Entities
 
 public class Entity {
+    protected GameField gameField;
     protected double x;
     protected double y;
     protected Vector<Double> dir;
     protected double[] bounds;
+
+    public void handOverGameField(GameField g){
+        this.gameField = g;
+    }
 
     public Entity(double x, double y){
         this.x = x;

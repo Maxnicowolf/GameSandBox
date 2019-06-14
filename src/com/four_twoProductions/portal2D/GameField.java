@@ -72,6 +72,7 @@ public class GameField extends JPanel {
 
     public void addPlayer(Player p){
         this.p = p;
+        this.p.handOverGameField(this);
     }
 
     public KeyListener keyListener = new KeyListener() {
