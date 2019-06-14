@@ -47,6 +47,8 @@ public class Player extends Entity{
                         else
                             setY(y + state[0].leftStickY * -1 > bounds[1] ?  bounds[1] : 0);
                         setDir(manager.getState(0).rightStickX, manager.getState(0).rightStickY * -1);
+                    } else {
+                        move(state[0].leftStickX,state[0].leftStickY * -1);
                     }
                 }
             }
