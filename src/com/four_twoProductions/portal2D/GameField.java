@@ -21,6 +21,10 @@ public class GameField extends JPanel {
     private int blockSize;
     public Player p;
 
+    public Block[][] getField() {
+        return field;
+    }
+
     public GameField(int width, int height) {
         this.width = width;
         this.height = height;

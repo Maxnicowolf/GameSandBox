@@ -11,12 +11,12 @@ public class Player extends Entity{
     private boolean controllerTest = true;
 
     public Player(double x, double y){
-        super(x, y);
+        super(x, y, true);
         controller();
     }
 
     public Player(double x, double y, Vector<Double> dir) {
-        super(x, y, dir);
+        super(x, y, dir, true);
         controller();
     }
 
