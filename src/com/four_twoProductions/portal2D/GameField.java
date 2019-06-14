@@ -60,6 +60,10 @@ public class GameField extends JPanel {
             g.drawRect((int) (p.getX() * blockSize + 10), (int) (p.getY() * blockSize + 10), blockSize, blockSize);
             g.setColor(Color.red);
             g.fillRect((int) (p.getX() * blockSize + 10), (int) (p.getY() * blockSize + 10), blockSize, blockSize); // Spieler platzieren
+            if (p.gethasPointer()) {
+                g.setColor(Color.black);
+                g.drawLine((int) (p.getX() * blockSize + blockSize / 2.0) + 10, (int) (p.getY() * blockSize + blockSize / 2.0) + 10, (int) (p.getX() * blockSize + blockSize / 2.0 + p.getDir().get(0) * blockSize) + 10, (int) (p.getY() * blockSize + blockSize / 2.0 + p.getDir().get(1) * blockSize) + 10);
+            }
         }
     }
 

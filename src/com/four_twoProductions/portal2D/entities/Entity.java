@@ -2,6 +2,8 @@ package com.four_twoProductions.portal2D.entities;
 
 import com.four_twoProductions.portal2D.GameField;
 import com.four_twoProductions.portal2D.obstacles.Block;
+import com.studiohartman.jamepad.ControllerManager;
+import com.studiohartman.jamepad.ControllerState;
 
 import java.util.Vector;
 
@@ -14,6 +16,7 @@ public class Entity {
     protected Vector<Double> dir;
     protected double[] bounds;
     protected boolean collision;
+    protected boolean hasPointer = false;
 
     public void handOverGameField(GameField g){
         this.gameField = g;
@@ -37,13 +40,19 @@ public class Entity {
 
     public void turn(double val){
         double angle = Math.atan(this.dir.get(1) / this.dir.get(0)) + val;
-        this.dir.set(0, Math.cos(angle));
-        this.dir.set(1, Math.sin(angle));
+        this.dir.set(0, Math.cos(angle * Math.PI / 180.0));
+        this.dir.set(1, Math.sin(angle * Math.PI / 180.0));
     }
+
 
     public void setDir(double x, double y){
         this.dir.set(0, x);
         this.dir.set(1, y);
+    }
+
+    public void setDir(double angle){
+        this.dir.set(0, Math.cos(angle * Math.PI / 180));
+        this.dir.set(1, -Math.sin(angle * Math.PI / 180));
     }
 
     public void move(double xval, double yval){
@@ -108,5 +117,9 @@ public class Entity {
 
     public void setY(double y) {
         this.y = y;
+    }
+
+    public Vector<Double> getDir() {
+        return dir;
     }
 }

@@ -9,6 +9,7 @@ import java.util.Vector;
 
 public class Player extends Entity{
     private boolean controllerTest = true;
+    private boolean hasPointer = true;
 
     public Player(double x, double y){
         super(x, y, true);
@@ -36,7 +37,6 @@ public class Player extends Entity{
                     }
 
                     state[0] = manager.getState(0);
-
                     if (bounds != null) {
                         if (x + state[0].leftStickX <= bounds[0] && x + state[0].leftStickX >= 0)
                             move(state[0].leftStickX, 0);
@@ -46,14 +46,18 @@ public class Player extends Entity{
                             move(0, state[0].leftStickY * -1);
                         else
                             setY(y + state[0].leftStickY * -1 > bounds[1] ?  bounds[1] : 0);
-                        setDir(manager.getState(0).rightStickX, manager.getState(0).rightStickY * -1);
                     } else {
                         move(state[0].leftStickX,state[0].leftStickY * -1);
                     }
+                    setDir(state[0].rightStickAngle);
                 }
             }
         };
         controller.start();
+    }
+
+    public boolean gethasPointer(){
+        return hasPointer;
     }
 
 }

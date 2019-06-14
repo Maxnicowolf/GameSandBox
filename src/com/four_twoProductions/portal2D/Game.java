@@ -21,6 +21,7 @@ public class Game {
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
                 //frame.addKeyListener(field.keyListener);
+                field.addObstacle(10, 8, 1);
                 field.addObstacle(10, 10, 1);
                 field.addObstacle(11, 10, 1);
                 field.addObstacle(12, 10, 1);
