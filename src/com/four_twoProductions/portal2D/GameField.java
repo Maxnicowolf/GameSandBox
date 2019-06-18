@@ -29,6 +29,14 @@ public class GameField extends JPanel {
         this.width = width;
         this.height = height;
         field = new Block[width][height];
+        for (int i = 0; i < field.length; i++){
+            field[i][0] = new BoundsBlock(i, 0);
+            field[i][field[0].length - 1] = new BoundsBlock(i, field[0].length - 1);
+        }
+        for (int i = 0; i < field[0].length; i++){
+            field[0][i] = new BoundsBlock(0, i);
+            field[field.length - 1][i] = new BoundsBlock(field.length - 1, i);
+        }
         blockSize = Math.min((HORIZONTAL - 50) / width, (VERTICAL - 45) / height);
     }
 
@@ -50,7 +58,10 @@ public class GameField extends JPanel {
                             g.setColor(Color.black);
                             g.fillOval(x * blockSize + 10, y * blockSize + 10, blockSize, blockSize);
                             break;
-
+                        case 3:
+                            g.setColor(Color.black);
+                            g.drawRect(x * blockSize + 10, y * blockSize + 10, blockSize, blockSize);
+                            break;
                     }
                 }
             }
@@ -105,13 +116,6 @@ public class GameField extends JPanel {
         }
     };
 
-    public int getxBounds(){
-        return width;
-    }
-
-    public int getyBounds(){
-        return height;
-    }
 }
 
 

@@ -35,20 +35,8 @@ public class Player extends Entity{
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                     state[0] = manager.getState(0);
-                    if (bounds != null) {
-                        if (x + state[0].leftStickX <= bounds[0] && x + state[0].leftStickX >= 0)
-                            move(state[0].leftStickX, 0);
-                        else
-                            setX(x + state[0].leftStickX > bounds[0] ?  bounds[0] : 0);
-                        if (y + state[0].leftStickY * -1 <= bounds[1] && y + state[0].leftStickY * -1 >= 0)
-                            move(0, state[0].leftStickY * -1);
-                        else
-                            setY(y + state[0].leftStickY * -1 > bounds[1] ?  bounds[1] : 0);
-                    } else {
-                        move(state[0].leftStickX,state[0].leftStickY * -1);
-                    }
+                    move(state[0].leftStickX,state[0].leftStickY * -1);
                     setDir(state[0].rightStickAngle);
                 }
             }

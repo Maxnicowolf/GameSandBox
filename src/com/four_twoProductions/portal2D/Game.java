@@ -20,7 +20,7 @@ public class Game {
                 frame.setResizable(false);
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
-                //frame.addKeyListener(field.keyListener);
+                frame.addKeyListener(field.keyListener);
                 field.addObstacle(10, 8, 1);
                 field.addObstacle(10, 10, 1);
                 field.addObstacle(11, 10, 1);
@@ -28,7 +28,6 @@ public class Game {
                 field.addObstacle(13, 10, 1);
                 field.addObstacle(12,12,2);
                 field.addPlayer(new Player(5, 5));
-                field.p.addBounds(field.getxBounds(), field.getyBounds());
                 frame.add(field);
                 frame.setVisible(true);
             }

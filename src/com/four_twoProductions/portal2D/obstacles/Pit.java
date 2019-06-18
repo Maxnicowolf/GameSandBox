@@ -2,6 +2,11 @@ package com.four_twoProductions.portal2D.obstacles;
 
 public class Pit extends Block {
     public Pit(int x, int y) {
-        super(x,y,2,true);
+        super(x,y,2,true, false);
+    }
+
+    @Override
+    public void action() {
+        System.out.println("AAAAAAAAAAAa");
     }
 }
