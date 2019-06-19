@@ -1,33 +1,23 @@
 package com.four_twoProductions.portal2D;
 
-import com.four_twoProductions.portal2D.entities.Player;
-import com.studiohartman.jamepad.ControllerManager;
-import com.studiohartman.jamepad.ControllerState;
-
 import javax.swing.*;
 
-import static com.four_twoProductions.portal2D.GameField.HORIZONTAL;
-import static com.four_twoProductions.portal2D.GameField.VERTICAL;
+import java.io.File;
 
+import static com.four_twoProductions.decoder.GameFieldBuilder.*;
 public class Game {
     public static void main(String[] args) throws InterruptedException {
-        GameField field = new GameField(30, 20);;
+        GameField field = fromFile(new File("/com/four_twoProductions/misc/test.txt"));
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
                 JFrame frame = new JFrame("Portal2D");
-                frame.setSize(HORIZONTAL, VERTICAL);
+                frame.setSize(field.HORIZONTAL, field.VERTICAL);
                 frame.setResizable(false);
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
                 frame.addKeyListener(field.keyListener);
-                field.addObstacle(10, 8, 1);
-                field.addObstacle(10, 10, 1);
-                field.addObstacle(11, 10, 1);
-                field.addObstacle(12, 10, 1);
-                field.addObstacle(13, 10, 1);
-                field.addObstacle(12,12,2);
-                field.addPlayer(new Player(5, 5));
+
                 frame.add(field);
                 frame.setVisible(true);
             }

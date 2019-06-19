@@ -12,9 +12,9 @@ import java.awt.event.KeyListener;
 
 public class GameField extends JPanel {
 
-    public  static final int HORIZONTAL = 750;
-    public static final int VERTICAL = 500;
-    public static final double VELOCITY = 0.2;
+    public int HORIZONTAL = 750;
+    public int VERTICAL = 500;
+    public static double VELOCITY = 0.2;
     private Block[][] field;
     private int width;
     private int height;
@@ -37,6 +37,9 @@ public class GameField extends JPanel {
             field[0][i] = new BoundsBlock(0, i);
             field[field.length - 1][i] = new BoundsBlock(field.length - 1, i);
         }
+        calculateBlockSize();
+    }
+    public void calculateBlockSize() {
         blockSize = Math.min((HORIZONTAL - 50) / width, (VERTICAL - 45) / height);
     }
 
