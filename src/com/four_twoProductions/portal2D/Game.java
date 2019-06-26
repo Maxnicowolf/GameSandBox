@@ -4,10 +4,11 @@ import javax.swing.*;
 
 import java.io.File;
 
+import static com.four_twoProductions.decoder.ChooseFile.filePath;
 import static com.four_twoProductions.decoder.GameFieldBuilder.*;
 public class Game {
     public static void main(String[] args) throws InterruptedException {
-        GameField field = fromFile(new File("/com/four_twoProductions/misc/test.txt"));
+        GameField field = fromPath(filePath());
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
