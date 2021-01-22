@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Google Drive/Projects/ExternalLibraries/Jamepad.jar!/" />
+          <root url="jar://$MODULE_DIR$/../External Libraries/jamepad.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
